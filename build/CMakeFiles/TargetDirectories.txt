@@ -1,0 +1,3 @@
+/home/duskel/Documents/Github/textures_data/build/CMakeFiles/run.dir
+/home/duskel/Documents/Github/textures_data/build/CMakeFiles/edit_cache.dir
+/home/duskel/Documents/Github/textures_data/build/CMakeFiles/rebuild_cache.dir
