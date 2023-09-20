@@ -7,7 +7,7 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -march=native -pthread")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -march=native -pthread -O3")
 
 set(PLATFORM_SPECIFIC_LIBS "-lpthread")
 

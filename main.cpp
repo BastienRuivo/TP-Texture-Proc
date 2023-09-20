@@ -8,9 +8,18 @@
 #include "EfrosLeung.h"
 
 
-int main() {
-    EfrosLeung efrosLeung("../img/text1.png", 7, 32, 32, 69);
+int main(int argc, char** argv) {
+    if (argc != 5) {
+        std::cout << "Usage: " << argv[0] << " <image> <patch size> <res> <seed>" << std::endl;
+        return 1;
+    }
+    auto name = argv[1];
+    auto patchSize = atoi(argv[2]);
+    auto res = atoi(argv[3]);
+    auto seed = atoi(argv[4]);
+    EfrosLeung efrosLeung(name, patchSize, res, res, seed);
     efrosLeung.run();
+    cv::imwrite("result.png", efrosLeung.getTarget());
     efrosLeung.show();
     return 0;
 }

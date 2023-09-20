@@ -16,6 +16,9 @@ private:
     int targetWidth, targetHeight;
     int seed;
 
+    cv::Point2i aa;
+    cv::Point2i bb;
+
     void init();
     cv::Point2i selectPixel();
     cv::Point2i selectPatch(const cv::Point2i& pixel);
@@ -29,5 +32,6 @@ public:
     EfrosLeung(const std::string& path, int patchSize, int targetWidth, int targetHeight, int seed = 42);
     void run();
     void show();
+    cv::Mat getTarget() const;
     ~EfrosLeung() {}
 };
