@@ -122,7 +122,7 @@ int EfrosLeung::getNeighborhood(int i, int j) {
 
 cv::Point2i EfrosLeung::selectPatch(const cv::Point2i& pixel)
 {
-    int minDistance = INT_MAX;
+    float minDistance = INT_MAX;
     cv::Point2i patch(-1, -1);
     for (int i = patchSize/2; i < img.rows - patchSize/2 - 1; i++)
     {
@@ -130,23 +130,26 @@ cv::Point2i EfrosLeung::selectPatch(const cv::Point2i& pixel)
         {
             int distance = getDistance(i, j, pixel);
             this->distances.at<int>(i, j) = distance;
-            if (distance < minDistance) {
+            if (distance != 0 && distance < minDistance) {
                 minDistance = distance;
-                patch = cv::Point2i(i, j);
             }
         }
     }
+
+    //std::cout<<minDistance<<std::endl;
 
     for (int i = patchSize/2; i < img.rows - patchSize/2 - 1; i++)
     {
         for (int j = patchSize/2; j < img.cols - patchSize/2 - 1; j++)
         {
-            if ((float)this->distances.at<int>(i, j) > minDistance * (1.0 - EPSILON) && (float)this->distances.at<int>(i, j) < minDistance * (1.0 + EPSILON) && rand()%2 == 1) {
-                patch.x = i;
-                patch.y = j;
+            //std::cout<< minDistance * (1.0 - EPSILON) << " < " << (float)this->distances.at<int>(i, j) << " < " << minDistance * (1.0 + EPSILON) << std::endl;
+            if ((float)this->distances.at<int>(i, j) > minDistance * (1.0 - EPSILON) && (float)this->distances.at<int>(i, j) < minDistance * (1.0 + EPSILON) && (rand()%2 == 1 || patch.x == -1)) {
+                patch = cv::Point2i(i, j);
             }
         }
     }
+
+    //std::cout<<patch<<std::endl;
     return patch;
 }
 
@@ -189,6 +192,7 @@ void EfrosLeung::color(const cv::Point2i& pixel, const cv::Point2i& patch)
         for (int j = -patchSize/2; j < patchSize/2 - 1; j++)
         {
             if (pixel.x + i >= 0 && pixel.x + i < targetWidth && pixel.y + j >= 0 && pixel.y + j < targetHeight && mask.at<uchar>(pixel.x + i, pixel.y + j) == 0) {
+                //std::cout<<patch.x << " " << patch.y << " " << patch.x + i << " " << patch.y + j << std::endl;
                 assert(patch.x + i >= 0 && patch.x + i < img.rows && patch.y + j >= 0 && patch.y + j < img.cols);
                 target.at<cv::Vec3b>(pixel.x + i, pixel.y + j) = img.at<cv::Vec3b>(patch.x + i, patch.y + j);
                 mask.at<uchar>(pixel.x + i, pixel.y + j) = 1;
