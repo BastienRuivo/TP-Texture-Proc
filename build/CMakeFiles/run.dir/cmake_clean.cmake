@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/run.dir/EfrosLeung.cpp.o"
   "CMakeFiles/run.dir/EfrosLeung.cpp.o.d"
-  "CMakeFiles/run.dir/main.cpp.o"
-  "CMakeFiles/run.dir/main.cpp.o.d"
+  "CMakeFiles/run.dir/mainEfrosLeung.cpp.o"
+  "CMakeFiles/run.dir/mainEfrosLeung.cpp.o.d"
   "run"
   "run.pdb"
 )

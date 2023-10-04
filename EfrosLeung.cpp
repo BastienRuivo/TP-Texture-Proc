@@ -27,14 +27,17 @@ void EfrosLeung::init()
     // choose a random patch from the image and place it at the middle
 
     cv::Point2i patch;
-    patch.x = rand() % (img.cols - patchSize/2) + patchSize/2;
-    patch.y = rand() % (img.rows - patchSize/2) + patchSize/2;
+    patch.x = rand() % (img.cols - patchSize) + patchSize/2;
+    patch.y = rand() % (img.rows - patchSize) + patchSize/2;
+
+    assert(patch.x + patchSize/2 < img.cols && patch.y + patchSize/2 < img.rows);
 
     // Copy the patch to the target image and fill the mask with 1
     cv::Rect roi(patch.x - patchSize/2, patch.y - patchSize/2, patchSize, patchSize);
     cv::Mat patchImg = img(roi);
     cv::Rect targetRoi(targetWidth/2 - patchSize/2, targetHeight/2 - patchSize/2, patchSize, patchSize);
     patchImg.copyTo(target(targetRoi));
+    
 
     // fill the mask with 1
     for (int i = targetWidth/2 - patchSize/2; i < targetWidth/2 + patchSize/2 + 1; i++)
@@ -53,7 +56,7 @@ void EfrosLeung::init()
     if(bb.y > targetHeight) bb.y = targetHeight;
 }
 
-void EfrosLeung::run() {
+int64 EfrosLeung::run() {
     cv::Point2i pixel = selectPixel();
     cv::Point2i patch;
     auto begin = std::chrono::high_resolution_clock::now();
@@ -63,11 +66,11 @@ void EfrosLeung::run() {
     {
         patch = selectPatch(pixel);
         if(n%targetWidth == 0) {
-            auto end = std::chrono::high_resolution_clock::now();
-            auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
-            auto elapsedSincePrevious = std::chrono::duration_cast<std::chrono::milliseconds>(end - previous);
-            previous = end;
-            std::cout << "Iteration " << n << " :: " << elapsed.count() << " ms" << " :: " << elapsedSincePrevious.count() << " ms" << std::endl;
+            //auto end = std::chrono::high_resolution_clock::now();
+            //auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
+            //auto elapsedSincePrevious = std::chrono::duration_cast<std::chrono::milliseconds>(end - previous);
+            //previous = end;
+            //std::cout << "Iteration " << n << " :: Previous patch "<< patch << " :: Time " << elapsed.count() << " ms" << " :: " << elapsedSincePrevious.count() << " ms" << std::endl;
         }
         color(pixel, patch);
         pixel = selectPixel();
@@ -75,17 +78,18 @@ void EfrosLeung::run() {
     }
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
-    std::cout << "Total time : " << elapsed.count() << " ms" << std::endl;
+    //std::cout << "Total time : " << elapsed.count() << " ms" << std::endl;
+    return elapsed.count();
 }
 
 cv::Point2i EfrosLeung::selectPixel()
 {
     cv::Point2i pixel;
     int maxNeighborhood = 0;
-
+    
     for (int i = aa.x; i < bb.x; i++)
     {
-        for (int j = aa.y; j < bb.y; j++)
+        for (int j = aa.x; j < bb.y; j++)
         {
             if (mask.at<uchar>(i, j) == 0) {
                 int neighbors = getNeighborhood(i, j);
@@ -124,19 +128,21 @@ cv::Point2i EfrosLeung::selectPatch(const cv::Point2i& pixel)
 {
     float minDistance = INT_MAX;
     cv::Point2i patch(-1, -1);
-    for (int i = patchSize/2; i < img.rows - patchSize/2 - 1; i++)
+    int wps = img.rows - patchSize/2 - 1;
+    int hps = img.cols - patchSize/2 - 1;
+    #pragma omp parallel for
+    for (int i = patchSize/2; i < wps; i++)
     {
-        for (int j = patchSize/2; j < img.cols - patchSize/2 - 1; j++)
+        for (int j = patchSize/2; j < hps; j++)
         {
             int distance = getDistance(i, j, pixel);
             this->distances.at<int>(i, j) = distance;
+            //std::cout<<distance<<std::endl;
             if (distance != 0 && distance < minDistance) {
                 minDistance = distance;
             }
         }
     }
-
-    //std::cout<<minDistance<<std::endl;
 
     for (int i = patchSize/2; i < img.rows - patchSize/2 - 1; i++)
     {
@@ -149,6 +155,8 @@ cv::Point2i EfrosLeung::selectPatch(const cv::Point2i& pixel)
         }
     }
 
+    assert(patch.x != -1 && patch.y != -1);
+
     //std::cout<<patch<<std::endl;
     return patch;
 }
@@ -156,9 +164,9 @@ cv::Point2i EfrosLeung::selectPatch(const cv::Point2i& pixel)
 int EfrosLeung::getDistance(int i, int j, const cv::Point2i& pixel)
 {
     int distance = 0;
-    for (int k = -(patchSize/2); k < patchSize/2 - 1; k++)
+    for (int k = -(patchSize/2); k < patchSize/2 + 1; k++)
     {
-        for (int l = -patchSize/2; l < patchSize/2 - 1; l++)
+        for (int l = -patchSize/2; l < patchSize/2 + 1; l++)
         {
             if (pixel.x + k >= 0 && pixel.x + k < targetWidth && pixel.y + l >= 0 && pixel.y + l < targetHeight && mask.at<uchar>(pixel.x + k, pixel.y + l) == 1) {
                 cv::Vec3b targetPixel = target.at<cv::Vec3b>(pixel.x + k, pixel.y + l);
@@ -174,31 +182,34 @@ int EfrosLeung::getDistance(int i, int j, const cv::Point2i& pixel)
 void EfrosLeung::color(const cv::Point2i& pixel, const cv::Point2i& patch)
 {
     //std::cout<<"color"<<std::endl;
-    if(pixel.x - patchSize/2 - 1 < aa.x) aa.x = pixel.x - patchSize/2 - 1;
-    else if (pixel.x + patchSize/2 + 2 > bb.x) bb.x = pixel.x + patchSize/2 + 2;
-    if(pixel.y - patchSize/2 - 1 < aa.y) aa.y = pixel.y - patchSize/2 - 1;
-    else if (pixel.y + patchSize/2 + 2 > bb.y) bb.y = pixel.y + patchSize/2 + 2;
+    if(pixel.x - 1 < aa.x) aa.x = pixel.x - 1;
+    else if (pixel.x + 2 > bb.x) bb.x = pixel.x + 2;
+    if(pixel.y - 1 < aa.y) aa.y = pixel.y - 1;
+    else if (pixel.y + 2 > bb.y) bb.y = pixel.y + 2;
 
     if(aa.x < 0) aa.x = 0;
     if(aa.y < 0) aa.y = 0;
     if(bb.x > targetWidth) bb.x = targetWidth;
     if(bb.y > targetHeight) bb.y = targetHeight;
 
+    target.at<cv::Vec3b>(pixel.x, pixel.y) = img.at<cv::Vec3b>(patch.x, patch.y);
+    mask.at<uchar>(pixel.x, pixel.y) = 1;
+
     
 
 
-    for (int i = -patchSize/2; i < patchSize/2 - 1; i++)
-    {
-        for (int j = -patchSize/2; j < patchSize/2 - 1; j++)
-        {
-            if (pixel.x + i >= 0 && pixel.x + i < targetWidth && pixel.y + j >= 0 && pixel.y + j < targetHeight && mask.at<uchar>(pixel.x + i, pixel.y + j) == 0) {
-                //std::cout<<patch.x << " " << patch.y << " " << patch.x + i << " " << patch.y + j << std::endl;
-                assert(patch.x + i >= 0 && patch.x + i < img.rows && patch.y + j >= 0 && patch.y + j < img.cols);
-                target.at<cv::Vec3b>(pixel.x + i, pixel.y + j) = img.at<cv::Vec3b>(patch.x + i, patch.y + j);
-                mask.at<uchar>(pixel.x + i, pixel.y + j) = 1;
-            }
-        }
-    }
+    // for (int i = -patchSize/2; i < patchSize/2 + 1; i++)
+    // {
+    //     for (int j = -patchSize/2; j < patchSize/2 + 1; j++)
+    //     {
+    //         if (pixel.x + i >= 0 && pixel.x + i < targetWidth && pixel.y + j >= 0 && pixel.y + j < targetHeight && mask.at<uchar>(pixel.x + i, pixel.y + j) == 0) {
+    //             //std::cout<<patch.x << " " << patch.y << " " << patch.x + i << " " << patch.y + j << std::endl;
+    //             assert(patch.x + i >= 0 && patch.x + i < img.rows && patch.y + j >= 0 && patch.y + j < img.cols);
+    //             target.at<cv::Vec3b>(pixel.x + i, pixel.y + j) = img.at<cv::Vec3b>(patch.x + i, patch.y + j);
+    //             mask.at<uchar>(pixel.x + i, pixel.y + j) = 1;
+    //         }
+    //     }
+    // }
 }
 
 void EfrosLeung::show()

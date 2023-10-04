@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/duskel/Documents/Github/textures_data/build
 
 # The main recursive "all" target.
 all: CMakeFiles/run.dir/all
+all: CMakeFiles/runKMean.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/run.dir/clean
+clean: CMakeFiles/runKMean.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -99,6 +101,32 @@ run: CMakeFiles/run.dir/rule
 CMakeFiles/run.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/clean
 .PHONY : CMakeFiles/run.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/runKMean.dir
+
+# All Build rule for target.
+CMakeFiles/runKMean.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runKMean.dir/build.make CMakeFiles/runKMean.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runKMean.dir/build.make CMakeFiles/runKMean.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/duskel/Documents/Github/textures_data/build/CMakeFiles --progress-num=4,5 "Built target runKMean"
+.PHONY : CMakeFiles/runKMean.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/runKMean.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/duskel/Documents/Github/textures_data/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/runKMean.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/duskel/Documents/Github/textures_data/build/CMakeFiles 0
+.PHONY : CMakeFiles/runKMean.dir/rule
+
+# Convenience name for target.
+runKMean: CMakeFiles/runKMean.dir/rule
+.PHONY : runKMean
+
+# clean rule for target.
+CMakeFiles/runKMean.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runKMean.dir/build.make CMakeFiles/runKMean.dir/clean
+.PHONY : CMakeFiles/runKMean.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -69,19 +69,19 @@ include CMakeFiles/run.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/run.dir/flags.make
 
-CMakeFiles/run.dir/main.cpp.o: CMakeFiles/run.dir/flags.make
-CMakeFiles/run.dir/main.cpp.o: /home/duskel/Documents/Github/textures_data/main.cpp
-CMakeFiles/run.dir/main.cpp.o: CMakeFiles/run.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/duskel/Documents/Github/textures_data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/run.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run.dir/main.cpp.o -MF CMakeFiles/run.dir/main.cpp.o.d -o CMakeFiles/run.dir/main.cpp.o -c /home/duskel/Documents/Github/textures_data/main.cpp
+CMakeFiles/run.dir/mainEfrosLeung.cpp.o: CMakeFiles/run.dir/flags.make
+CMakeFiles/run.dir/mainEfrosLeung.cpp.o: /home/duskel/Documents/Github/textures_data/mainEfrosLeung.cpp
+CMakeFiles/run.dir/mainEfrosLeung.cpp.o: CMakeFiles/run.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/duskel/Documents/Github/textures_data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/run.dir/mainEfrosLeung.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run.dir/mainEfrosLeung.cpp.o -MF CMakeFiles/run.dir/mainEfrosLeung.cpp.o.d -o CMakeFiles/run.dir/mainEfrosLeung.cpp.o -c /home/duskel/Documents/Github/textures_data/mainEfrosLeung.cpp
 
-CMakeFiles/run.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/duskel/Documents/Github/textures_data/main.cpp > CMakeFiles/run.dir/main.cpp.i
+CMakeFiles/run.dir/mainEfrosLeung.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run.dir/mainEfrosLeung.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/duskel/Documents/Github/textures_data/mainEfrosLeung.cpp > CMakeFiles/run.dir/mainEfrosLeung.cpp.i
 
-CMakeFiles/run.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/duskel/Documents/Github/textures_data/main.cpp -o CMakeFiles/run.dir/main.cpp.s
+CMakeFiles/run.dir/mainEfrosLeung.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run.dir/mainEfrosLeung.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/duskel/Documents/Github/textures_data/mainEfrosLeung.cpp -o CMakeFiles/run.dir/mainEfrosLeung.cpp.s
 
 CMakeFiles/run.dir/EfrosLeung.cpp.o: CMakeFiles/run.dir/flags.make
 CMakeFiles/run.dir/EfrosLeung.cpp.o: /home/duskel/Documents/Github/textures_data/EfrosLeung.cpp
@@ -99,13 +99,13 @@ CMakeFiles/run.dir/EfrosLeung.cpp.s: cmake_force
 
 # Object files for target run
 run_OBJECTS = \
-"CMakeFiles/run.dir/main.cpp.o" \
+"CMakeFiles/run.dir/mainEfrosLeung.cpp.o" \
 "CMakeFiles/run.dir/EfrosLeung.cpp.o"
 
 # External object files for target run
 run_EXTERNAL_OBJECTS =
 
-run: CMakeFiles/run.dir/main.cpp.o
+run: CMakeFiles/run.dir/mainEfrosLeung.cpp.o
 run: CMakeFiles/run.dir/EfrosLeung.cpp.o
 run: CMakeFiles/run.dir/build.make
 run: /usr/lib/libopencv_gapi.so.4.8.0
@@ -164,6 +164,8 @@ run: /usr/lib/libopencv_flann.so.4.8.0
 run: /usr/lib/libopencv_photo.so.4.8.0
 run: /usr/lib/libopencv_imgproc.so.4.8.0
 run: /usr/lib/libopencv_core.so.4.8.0
+run: /usr/lib/libgomp.so
+run: /usr/lib/libpthread.a
 run: CMakeFiles/run.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/duskel/Documents/Github/textures_data/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable run"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run.dir/link.txt --verbose=$(VERBOSE)

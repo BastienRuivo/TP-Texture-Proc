@@ -129,6 +129,19 @@ run/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
+#=============================================================================
+# Target rules for targets named runKMean
+
+# Build rule for target.
+runKMean: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runKMean
+.PHONY : runKMean
+
+# fast build rule for target.
+runKMean/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runKMean.dir/build.make CMakeFiles/runKMean.dir/build
+.PHONY : runKMean/fast
+
 EfrosLeung.o: EfrosLeung.cpp.o
 .PHONY : EfrosLeung.o
 
@@ -153,29 +166,53 @@ EfrosLeung.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/EfrosLeung.cpp.s
 .PHONY : EfrosLeung.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+mainEfrosLeung.o: mainEfrosLeung.cpp.o
+.PHONY : mainEfrosLeung.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main.cpp.o
-.PHONY : main.cpp.o
+mainEfrosLeung.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/mainEfrosLeung.cpp.o
+.PHONY : mainEfrosLeung.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+mainEfrosLeung.i: mainEfrosLeung.cpp.i
+.PHONY : mainEfrosLeung.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main.cpp.i
-.PHONY : main.cpp.i
+mainEfrosLeung.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/mainEfrosLeung.cpp.i
+.PHONY : mainEfrosLeung.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+mainEfrosLeung.s: mainEfrosLeung.cpp.s
+.PHONY : mainEfrosLeung.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/main.cpp.s
-.PHONY : main.cpp.s
+mainEfrosLeung.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/mainEfrosLeung.cpp.s
+.PHONY : mainEfrosLeung.cpp.s
+
+mainKMean.o: mainKMean.cpp.o
+.PHONY : mainKMean.o
+
+# target to build an object file
+mainKMean.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runKMean.dir/build.make CMakeFiles/runKMean.dir/mainKMean.cpp.o
+.PHONY : mainKMean.cpp.o
+
+mainKMean.i: mainKMean.cpp.i
+.PHONY : mainKMean.i
+
+# target to preprocess a source file
+mainKMean.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runKMean.dir/build.make CMakeFiles/runKMean.dir/mainKMean.cpp.i
+.PHONY : mainKMean.cpp.i
+
+mainKMean.s: mainKMean.cpp.s
+.PHONY : mainKMean.s
+
+# target to generate assembly for a file
+mainKMean.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runKMean.dir/build.make CMakeFiles/runKMean.dir/mainKMean.cpp.s
+.PHONY : mainKMean.cpp.s
 
 # Help Target
 help:
@@ -186,12 +223,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
+	@echo "... runKMean"
 	@echo "... EfrosLeung.o"
 	@echo "... EfrosLeung.i"
 	@echo "... EfrosLeung.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... mainEfrosLeung.o"
+	@echo "... mainEfrosLeung.i"
+	@echo "... mainEfrosLeung.s"
+	@echo "... mainKMean.o"
+	@echo "... mainKMean.i"
+	@echo "... mainKMean.s"
 .PHONY : help
 
 

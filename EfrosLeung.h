@@ -28,9 +28,9 @@ private:
     void color(const cv::Point2i& pixel, const cv::Point2i& patch);
 
 public:
-    const float EPSILON = 0.5f;
+    const float EPSILON = 0.01f;
     EfrosLeung(const std::string& path, int patchSize, int targetWidth, int targetHeight, int seed = 42);
-    void run();
+    int64 run();
     void show();
     cv::Mat getTarget() const;
     ~EfrosLeung() {}
