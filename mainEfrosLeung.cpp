@@ -17,8 +17,8 @@ int main(int argc, char** argv) {
     }
     auto name = argv[1];
     auto seed = atoi(argv[2]);
-    std::vector<int> patchSizes = {5, 7, 9, 11};
-    std::vector<int> resSizes = {128};
+    std::vector<int> patchSizes = {9};
+    std::vector<int> resSizes = {96};
     int nbTests = 1;
     srand(seed);
     // open file res.csv
@@ -27,6 +27,7 @@ int main(int argc, char** argv) {
     std::ofstream file;
     file.open("res.csv");
     file << "Resolution,Patch,Time" << std::endl;
+    std::cout<<"Begin computations..."<<std::endl;
     for(int j = 0; j < patchSizes.size(); j++) {
         for(int i = 0; i < resSizes.size(); i++) {
             int64 totalTime = 0;
@@ -40,5 +41,7 @@ int main(int argc, char** argv) {
             file << resSizes[i] << "," << patchSizes[j] << "," << (totalTime/nbTests)<< std::endl;
         }
     }
+    file.close();
+    std::cout<<"End computations..."<<std::endl;
     return 0;
 }

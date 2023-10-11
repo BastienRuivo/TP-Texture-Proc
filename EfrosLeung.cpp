@@ -66,11 +66,11 @@ int64 EfrosLeung::run() {
     {
         patch = selectPatch(pixel);
         if(n%targetWidth == 0) {
-            //auto end = std::chrono::high_resolution_clock::now();
-            //auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
-            //auto elapsedSincePrevious = std::chrono::duration_cast<std::chrono::milliseconds>(end - previous);
-            //previous = end;
-            //std::cout << "Iteration " << n << " :: Previous patch "<< patch << " :: Time " << elapsed.count() << " ms" << " :: " << elapsedSincePrevious.count() << " ms" << std::endl;
+            auto end = std::chrono::high_resolution_clock::now();
+            auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
+            auto elapsedSincePrevious = std::chrono::duration_cast<std::chrono::milliseconds>(end - previous);
+            previous = end;
+            std::cout << "Iteration " << n << " :: Previous patch "<< patch << " :: Time " << elapsed.count() << " ms" << " :: " << elapsedSincePrevious.count() << " ms" << std::endl;
         }
         color(pixel, patch);
         pixel = selectPixel();
@@ -89,7 +89,7 @@ cv::Point2i EfrosLeung::selectPixel()
     
     for (int i = aa.x; i < bb.x; i++)
     {
-        for (int j = aa.x; j < bb.y; j++)
+        for (int j = aa.y; j < bb.y; j++)
         {
             if (mask.at<uchar>(i, j) == 0) {
                 int neighbors = getNeighborhood(i, j);
