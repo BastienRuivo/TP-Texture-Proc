@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src -I/home/duskel/Documents/Github/textures_data/inc -isystem /usr/include/opencv4
+CXX_INCLUDES = -I/home/duskel/Documents/Github/textures_data/inc -isystem /usr/include/opencv4
 
 CXX_FLAGS = -Wall -Wextra -march=native -pthread -O3 -O3 -std=gnu++20 -fopenmp
 

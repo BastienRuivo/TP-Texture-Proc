@@ -14,14 +14,11 @@ private:
     std::array<float, dim> histogram;
 public:
     GradientHistogram() {
-        for (size_t i = 0; i < dim; i++)
-        {
-            histogram[i] = 0;
-        }
+        histogram.fill(0);
     }
 
-    std::array<float, dim> getHistogram() {
-        return histogram;
+    float getHistogram(int i) const {
+        return histogram[i];
     }
 
     void fillHistogram(const cv::Mat & imx, const cv::Mat & imy) {

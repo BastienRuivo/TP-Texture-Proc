@@ -130,7 +130,7 @@ cv::Point2i EfrosLeung::selectPatch(const cv::Point2i& pixel)
     cv::Point2i patch(-1, -1);
     int wps = img.rows - patchSize/2 - 1;
     int hps = img.cols - patchSize/2 - 1;
-    #pragma omp parallel for
+    #pragma omp parallel for schedule(dynamic)
     for (int i = patchSize/2; i < wps; i++)
     {
         for (int j = patchSize/2; j < hps; j++)

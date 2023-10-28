@@ -12,13 +12,27 @@
 #include <assert.h>
 #include <chrono>
 
+#include "GradientHistogram.h"
+
 template<int dim>
 class KMeanPoint {
 public :
     std::array<float,dim> coord;
-    KMeanPoint(std::array<float, dim> values){
-        coord = std::move(values);
+    KMeanPoint(const std::array<float, dim>& values){
+        for (size_t i = 0; i < values.size(); i++)
+        {
+            coord[i] = values[i];
+        }
     }; 
+
+    explicit KMeanPoint(const GradientHistogram<dim> & hist){
+        for (size_t i = 0; i < dim; i++)
+        {
+            coord[i] = hist.getHistogram(i);
+        }
+    };
+
+
 
     static KMeanPoint random(float min, float max){
         std::array<float,dim> buff;

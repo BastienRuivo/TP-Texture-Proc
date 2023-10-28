@@ -141,21 +141,65 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/include/c++/13.2.1/bits/locale_facets.tcc \
  /usr/include/c++/13.2.1/bits/basic_ios.tcc \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
- /usr/include/c++/13.2.1/bits/istream.tcc \
+ /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/c++/13.2.1/fstream \
+ /usr/include/c++/13.2.1/bits/codecvt.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/13.2.1/bits/fstream.tcc \
+ /home/duskel/Documents/Github/textures_data/KMean.h \
+ /usr/include/c++/13.2.1/array /usr/include/c++/13.2.1/utility \
+ /usr/include/c++/13.2.1/bits/stl_relops.h /usr/include/c++/13.2.1/vector \
+ /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/13.2.1/bits/stl_vector.h \
+ /usr/include/c++/13.2.1/bits/stl_bvector.h \
+ /usr/include/c++/13.2.1/bits/vector.tcc /usr/include/c++/13.2.1/stdlib.h \
+ /usr/include/c++/13.2.1/limits /usr/include/c++/13.2.1/algorithm \
+ /usr/include/c++/13.2.1/bits/stl_algo.h \
+ /usr/include/c++/13.2.1/bits/algorithmfwd.h \
+ /usr/include/c++/13.2.1/bits/stl_heap.h \
+ /usr/include/c++/13.2.1/bits/uniform_int_dist.h \
+ /usr/include/c++/13.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/13.2.1/bits/ranges_algo.h \
+ /usr/include/c++/13.2.1/bits/ranges_algobase.h \
+ /usr/include/c++/13.2.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/13.2.1/pstl/execution_defs.h /usr/include/assert.h \
+ /usr/include/c++/13.2.1/chrono /usr/include/c++/13.2.1/bits/chrono.h \
+ /usr/include/c++/13.2.1/ratio /usr/include/c++/13.2.1/cstdint \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/c++/13.2.1/ctime \
+ /usr/include/c++/13.2.1/bits/parse_numbers.h \
+ /usr/include/c++/13.2.1/sstream /usr/include/c++/13.2.1/bits/sstream.tcc \
+ /usr/include/c++/13.2.1/bits/shared_ptr.h \
+ /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
+ /usr/include/c++/13.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/13.2.1/bits/unique_ptr.h \
+ /usr/include/c++/13.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/13.2.1/ext/concurrence.h \
+ /usr/include/c++/13.2.1/bits/align.h \
+ /usr/include/c++/13.2.1/bits/chrono_io.h /usr/include/c++/13.2.1/iomanip \
+ /usr/include/c++/13.2.1/locale \
+ /usr/include/c++/13.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h \
+ /usr/include/c++/13.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13.2.1/bits/locale_conv.h \
+ /usr/include/c++/13.2.1/bits/quoted_string.h \
+ /usr/include/c++/13.2.1/format /usr/include/c++/13.2.1/charconv \
+ /usr/include/c++/13.2.1/optional \
+ /usr/include/c++/13.2.1/bits/enable_special_members.h \
+ /usr/include/c++/13.2.1/span /usr/include/c++/13.2.1/variant \
+ /home/duskel/Documents/Github/textures_data/GradientHistogram.h \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
  /usr/include/opencv4/opencv2/core/version.hpp \
- /usr/include/c++/13.2.1/limits \
  /usr/include/opencv4/opencv2/core/hal/interface.h \
- /usr/include/c++/13.2.1/cstdint \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/emmintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mmintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mm_malloc.h \
- /usr/include/c++/13.2.1/stdlib.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/immintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/ia32intrin.h \
@@ -246,7 +290,7 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/prfchwintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/keylockerintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/amxfp16intrin.h \
- /usr/include/c++/13.2.1/array /usr/include/opencv4/opencv2/core/base.hpp \
+ /usr/include/opencv4/opencv2/core/base.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/c++/13.2.1/climits \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/limits.h \
@@ -254,22 +298,10 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/c++/13.2.1/algorithm \
- /usr/include/c++/13.2.1/bits/stl_algo.h \
- /usr/include/c++/13.2.1/bits/algorithmfwd.h \
- /usr/include/c++/13.2.1/bits/stl_heap.h \
- /usr/include/c++/13.2.1/bits/uniform_int_dist.h \
- /usr/include/c++/13.2.1/bits/stl_tempbuf.h \
- /usr/include/c++/13.2.1/bits/ranges_algo.h \
- /usr/include/c++/13.2.1/bits/ranges_algobase.h \
- /usr/include/c++/13.2.1/pstl/glue_algorithm_defs.h \
- /usr/include/c++/13.2.1/pstl/execution_defs.h \
- /usr/include/opencv4/opencv2/core/cvstd.hpp \
+ /usr/include/bits/uio_lim.h /usr/include/opencv4/opencv2/core/cvstd.hpp \
  /usr/include/c++/13.2.1/cstring /usr/include/string.h \
- /usr/include/strings.h /usr/include/c++/13.2.1/utility \
- /usr/include/c++/13.2.1/bits/stl_relops.h /usr/include/c++/13.2.1/cmath \
- /usr/include/math.h /usr/include/bits/math-vector.h \
- /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/strings.h /usr/include/c++/13.2.1/cmath /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
  /usr/include/bits/fp-fast.h \
  /usr/include/bits/mathcalls-helper-functions.h \
@@ -289,15 +321,7 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/include/c++/13.2.1/tr1/riemann_zeta.tcc \
  /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
  /usr/include/c++/13.2.1/memory \
- /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
  /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/13.2.1/bits/align.h \
- /usr/include/c++/13.2.1/bits/unique_ptr.h \
- /usr/include/c++/13.2.1/bits/shared_ptr.h \
- /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
- /usr/include/c++/13.2.1/bits/allocated_ptr.h \
- /usr/include/c++/13.2.1/ext/aligned_buffer.h \
- /usr/include/c++/13.2.1/ext/concurrence.h \
  /usr/include/c++/13.2.1/bits/shared_ptr_atomic.h \
  /usr/include/c++/13.2.1/bits/atomic_base.h \
  /usr/include/c++/13.2.1/bits/atomic_lockfree_defines.h \
@@ -313,7 +337,7 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/include/c++/13.2.1/bits/ranges_uninitialized.h \
  /usr/include/c++/13.2.1/pstl/glue_memory_defs.h \
  /usr/include/opencv4/opencv2/core/neon_utils.hpp \
- /usr/include/opencv4/opencv2/core/vsx_utils.hpp /usr/include/assert.h \
+ /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
  /usr/include/opencv4/opencv2/core/check.hpp \
  /usr/include/opencv4/opencv2/core/traits.hpp \
  /usr/include/opencv4/opencv2/core/matx.hpp \
@@ -322,17 +346,13 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/include/opencv4/opencv2/core/types.hpp \
  /usr/include/c++/13.2.1/cfloat \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
- /usr/include/c++/13.2.1/vector /usr/include/c++/13.2.1/bits/stl_vector.h \
- /usr/include/c++/13.2.1/bits/stl_bvector.h \
- /usr/include/c++/13.2.1/bits/vector.tcc \
  /usr/include/opencv4/opencv2/core/mat.hpp \
  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
  /usr/include/opencv4/opencv2/core/persistence.hpp \
  /usr/include/opencv4/opencv2/core/operations.hpp \
  /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
- /usr/include/c++/13.2.1/complex /usr/include/c++/13.2.1/sstream \
- /usr/include/c++/13.2.1/bits/sstream.tcc \
+ /usr/include/c++/13.2.1/complex \
  /usr/include/opencv4/opencv2/core/utility.hpp \
  /usr/include/c++/13.2.1/functional \
  /usr/include/c++/13.2.1/bits/std_function.h \
@@ -340,12 +360,8 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/include/c++/13.2.1/bits/unordered_map.h \
  /usr/include/c++/13.2.1/bits/hashtable.h \
  /usr/include/c++/13.2.1/bits/hashtable_policy.h \
- /usr/include/c++/13.2.1/bits/enable_special_members.h \
  /usr/include/c++/13.2.1/bits/node_handle.h \
  /usr/include/c++/13.2.1/bits/erase_if.h /usr/include/c++/13.2.1/mutex \
- /usr/include/c++/13.2.1/bits/chrono.h /usr/include/c++/13.2.1/ratio \
- /usr/include/c++/13.2.1/ctime \
- /usr/include/c++/13.2.1/bits/parse_numbers.h \
  /usr/include/c++/13.2.1/bits/unique_lock.h \
  /usr/include/opencv4/opencv2/core/optim.hpp \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
@@ -354,63 +370,4 @@ CMakeFiles/runKMean.dir/mainKMean.cpp.o: \
  /usr/include/opencv4/opencv2/highgui.hpp \
  /usr/include/opencv4/opencv2/videoio.hpp \
  /usr/include/opencv4/opencv2/imgproc.hpp \
- /usr/include/opencv4/opencv2/imgproc/segmentation.hpp \
- /usr/include/c++/13.2.1/fstream /usr/include/c++/13.2.1/bits/codecvt.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/13.2.1/bits/fstream.tcc \
- /home/duskel/Documents/Github/textures_data/KMean.h \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/sciplot.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Canvas.hpp \
- /usr/include/c++/13.2.1/variant \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Figure.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Plot2D.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Constants.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Default.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Enums.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Palettes.hpp \
- /usr/include/c++/13.2.1/map /usr/include/c++/13.2.1/bits/stl_tree.h \
- /usr/include/c++/13.2.1/bits/stl_map.h \
- /usr/include/c++/13.2.1/bits/stl_multimap.h \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Plot.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/StringOrDouble.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Utils.hpp \
- /usr/include/c++/13.2.1/valarray \
- /usr/include/c++/13.2.1/bits/valarray_array.h \
- /usr/include/c++/13.2.1/bits/valarray_array.tcc \
- /usr/include/c++/13.2.1/bits/valarray_before.h \
- /usr/include/c++/13.2.1/bits/slice_array.h \
- /usr/include/c++/13.2.1/bits/valarray_after.h \
- /usr/include/c++/13.2.1/bits/gslice.h \
- /usr/include/c++/13.2.1/bits/gslice_array.h \
- /usr/include/c++/13.2.1/bits/mask_array.h \
- /usr/include/c++/13.2.1/bits/indirect_array.h \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/AxisLabelSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/TextSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/FontSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/Specs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/BorderSpecs.hpp \
- /usr/include/c++/13.2.1/bitset \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/DepthSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/LineSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/DrawSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/ColumnIndex.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/FillSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/FilledCurvesSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/PointSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/FillStyleSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/GridSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/GridSpecsBase.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/ShowSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/HistogramStyleSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/LegendSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/FrameSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/TitleSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/OffsetSpecsOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/TicsSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/TicsSpecsBaseOf.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/TicsSpecsMajor.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/TicsSpecsMinor.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Plot3D.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/specs/LayoutSpecs.hpp \
- /home/duskel/Documents/Github/textures_data/build/_deps/sciplot_content-src/sciplot/Vec.hpp
+ /usr/include/opencv4/opencv2/imgproc/segmentation.hpp

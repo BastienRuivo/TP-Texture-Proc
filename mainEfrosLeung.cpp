@@ -17,8 +17,8 @@ int main(int argc, char** argv) {
     }
     auto name = argv[1];
     auto seed = atoi(argv[2]);
-    std::vector<int> patchSizes = {9};
-    std::vector<int> resSizes = {96};
+    std::vector<int> patchSizes = {27};
+    std::vector<int> resSizes = {128};
     int nbTests = 1;
     srand(seed);
     // open file res.csv
